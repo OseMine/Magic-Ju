@@ -1,3 +1,4 @@
 .title   Titel
 .text    text
-.
+.pic     foto
+.back    background
