@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
+   <head>
+
+
     <meta charset="UTF-8"><link rel="apple-touch-icon-precomposed" sizes="57x57" href="favicon/apple-touch-icon-57x57.png" />
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="favicon/apple-touch-icon-114x114.png" />
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="favicon/apple-touch-icon-72x72.png" />
@@ -22,101 +24,96 @@
     <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
 
-
-
-
-    <title>Home  | Magic Ju </title>
-    <link rel="stylesheet" href="main.css">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+      <meta charset="utf-8">
+      <title>Home | Magic Juoic</title>
+      <link rel="stylesheet" href="style.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
    </head>
-<body>
-  <div class="sidebar">
-    <div class="logo-details">
-      <i class='bx bxl-c-plus-plus icon'></i>
-        <div class="logo_name" onclick="location.href='/index.html'">Magic Ju</div>
-        <i class='bx bx-menu' id="btn" ></i>
-    </div>
-    <ul class="nav-list">
-      <li>
-          <i class='bx bx-search' ></i>
-          <input type="search" placeholder="Suche..." value="" id="search" onchange="openPage()">
-
-         <span class="tooltip">Suche</span>
-      </li>
-      <li>
-        <a href="#">
-          <i class='bx bx-grid-alt'></i>
-          <span class="links_name">Home</span>
-        </a>
-         <span class="tooltip"></span>
-      </li>
-      <li>
-       <a href="login.html">
-         <i class='bx bx-user' ></i>
-         <span class="links_name">Programm</span>
-       </a>
-       <span class="tooltip"></span>
-     </li>
-     <li>
-       <a href="#">
-         <i class='bx bx-chat' ></i>
-         <span class="links_name">Neues</span>
-       </a>
-       <span class="tooltip"></span>
-     </li>
-     <li>
-       <a href="#">
-        <ion-icon name="trending-up-outline"></ion-icon>
-         <span class="links_name"> Analysen</span>
-       </a>
-       <span class="tooltip"></span>
-     </li>
-     <li>
-       <a href="download/download.html">
-         <i class='bx bx-folder' ></i>
-         <span class="links_name">Download</span>
-       </a>
-       <span class="tooltip"></span>
-     </li>
-     <li>
-       <a href="#">
-         <i class='bx bx-cog' ></i>
-         <span class="links_name">Settings</span>
-       </a>
-       <span class="tooltip"></span>
-     </li>
-     <li class="profile">
-         <div class="profile-details">
-           <!--<img src="profile.jpg" alt="profileImg">-->
-           <div class="name_job">
-             <div class="name">OseCode</div>
-             <div class="job">Web/Game Degign/build</div>
-           </div>
+   <body>
+      <nav>
+         <div class="menu-icon">
+            <span class="fas fa-bars"></span>
          </div>
-         <i class='bx bx-log-out' id="log_out" ></i>
-     </li>
-    </ul>
-  </div>
-  <section class="home-section">
-      <div class="text">Home</div>
-  </section>
-  <script>
-    function openPage() {
-        var x = document.getElementById("search").value;
+         <div class="logo" onclick="location.href='/index.html'" style="cursor: pointer;">
+            Magic Ju
+         </div>
+         <div class="nav-items">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Programm</a></li>
+            <li><a href="#">Neues</a></li>
+            <li><a href="#">Kontakt</a></li>
+            <li><a href="#">Feedback</a></li>
+         </div>
+         <div class="search-icon">
+            <span class="fas fa-search"></span>
+         </div>
+         <div class="cancel-icon">
+            <span class="fas fa-times"></span>
+         </div>
+         <form action="#">
+            <input type="search" class="search-data" placeholder="Suche..."  value="" id="search" onchange="openPage()" required>
+            <button type="submit" class="fas fa-search"></button>
+         </form>
+      </nav>
+      <div class="content">
+         <header class="space"></header>
+         <div class="space text">
+            
+         </div>
+      </div>
 
-        if (x === "jonews") {
-            window.open("https://www.jonews.gq");
+      <script>
+        function openPage() {
+            var x = document.getElementById("search").value;
+    
+            if (x === "jonews") {
+                window.open("https://www.jonews.gq");
+            }
+    
+            if (x === "osemine") {
+                window.open("https://www.osemine.gq");
+            }
+    
+            if (x === "Alien Attack") {
+                window.open("https://www.osemine.gq/download/download.html");
+            }
+    
+            if (x === "Deine Mutter ist schwul") {
+                window.open("https://www.magic-ju.gq");
+            }
+    
         }
+        </script>
+      <script>
+         const menuBtn = document.querySelector(".menu-icon span");
+         const searchBtn = document.querySelector(".search-icon");
+         const cancelBtn = document.querySelector(".cancel-icon");
+         const items = document.querySelector(".nav-items");
+         const form = document.querySelector("form");
+         menuBtn.onclick = ()=>{
+           items.classList.add("active");
+           menuBtn.classList.add("hide");
+           searchBtn.classList.add("hide");
+           cancelBtn.classList.add("show");
+         }
+         cancelBtn.onclick = ()=>{
+           items.classList.remove("active");
+           menuBtn.classList.remove("hide");
+           searchBtn.classList.remove("hide");
+           cancelBtn.classList.remove("show");
+           form.classList.remove("active");
+           cancelBtn.style.color = "#ff3d00";
+         }
+         searchBtn.onclick = ()=>{
+           form.classList.add("active");
+           searchBtn.classList.add("hide");
+           cancelBtn.classList.add("show");
+         }
+      </script>
 
-        if (x === "osemine") {
-            window.open("https://www.osemine.gq");
-        }
 
-        if (x === "Alien Attack") {
-            window.open("https://www.osemine.gq/download/download.html");
-        }
 
-    }
-    </script>
-</body>
+   </body>
 </html>
