@@ -53,8 +53,16 @@
             <span class="fas fa-times"></span>
          </div>
          <form action="#">
-            <input type="search" class="search-data" placeholder="Suche..."  value="" id="search" onchange="openPage()" required>
-            <button type="submit" class="fas fa-search"></button>
+            <div class="wrapper">
+               <div class="search-input">  
+                 <input type="text" placeholder="Suche..." class="search-data" value="" id="search" onchange="openPage()" required>
+                 <div class="autocom-box">
+                 </div>
+                 <div class="icon"><i class="fas fa-"></i></div>
+               </div>
+             </div>
+            
+            <button type="submit" class="fas fa-search" onclick="openPage()"></button>
          </form>
       </nav>
       <div class="content">
@@ -64,15 +72,18 @@
          </div>
       </div>
 
+      <script src="main.js"></script>
+      <script src="search.js"></script>
+
       <script>
         function openPage() {
             var x = document.getElementById("search").value;
     
-            if (x === "jonews") {
+            if (x === "JO News") {
                 window.open("https://www.jonews.gq");
             }
     
-            if (x === "osemine") {
+            if (x === "OseMine") {
                 window.open("https://www.osemine.gq");
             }
     
@@ -90,6 +101,7 @@
     
         }
         </script>
+
       <script>
          const menuBtn = document.querySelector(".menu-icon span");
          const searchBtn = document.querySelector(".search-icon");
